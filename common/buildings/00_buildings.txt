@@ -341,7 +341,7 @@ courthouse = {
 	cost = 100
 	time = 12
 	modifier = {
-		local_state_maintenance_modifier = -0.25
+		local_state_maintenance_modifier = 0.25
 		local_autonomy = -0.1
 		local_governing_cost = -0.25
 	}
@@ -1083,7 +1083,7 @@ town_hall = {
 	make_obsolete = courthouse
 
 	modifier = {
-		local_state_maintenance_modifier = -0.5
+		local_state_maintenance_modifier = 0.5
 		local_autonomy = -0.2
 		local_governing_cost = -0.5
 	}

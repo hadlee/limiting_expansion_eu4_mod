@@ -107,13 +107,13 @@ port = {
 }
 
 in_state = {
-	local_institution_spread = 0.10
+	local_institution_spread = 0.15
 }
 
 in_capital_state = {
 	local_institution_spread = 0.05
 	local_state_maintenance_modifier = -0.5
-	local_governing_cost = -1.0
+	local_governing_cost = -0.5
 }
 
 coastal = {
@@ -265,7 +265,6 @@ province_razed = {
 development = {
 	allowed_num_of_buildings = 0.1
 	supply_limit_modifier = 0.02
-	local_missionary_strength = -0.001
 	land_forcelimit	= 0.1			# special case, affected by autonomy
 	naval_forcelimit = 0.1			# special case, affected by autonomy & set to 0 by code if not port
 	local_sailors = 60			# special case, affected by autonomy & set to 0 by code if not port
@@ -321,9 +320,10 @@ native_aggressiveness = {
 }
 
 core = {
-	local_tax_modifier = 0.75				#90% more in a core
-	local_manpower_modifier = 0.75			#75% more in a core
-	local_sailors_modifier = 0.75
+	local_tax_modifier = 1				#90% more in a core
+	local_manpower_modifier = 1.1		#75% more in a core
+	local_sailors_modifier = 0.9
+	min_local_autonomy = 50
 }
 
 non_core = {
@@ -335,23 +335,20 @@ colonial_core = {
 	local_manpower_modifier = 0.75			#75% more in a core
 	local_sailors_modifier = 0.75
 	local_missionary_strength = -0.02
-	min_local_autonomy = 50
-	local_governing_cost = -0.5
+	min_local_autonomy = 80
 }
 
 territory_core = {
-	local_tax_modifier = 0.75				#90% more in a core
-	local_manpower_modifier = 0.75			#75% more in a core
-	local_sailors_modifier = 0.75
-	local_missionary_strength = -0.02
-	min_local_autonomy = 90
-	local_governing_cost = -0.75
+	local_tax_modifier = 0.5				#90% more in a core
+	local_manpower_modifier = 0.5			#75% more in a core
+	local_sailors_modifier = 0.5
+	local_missionary_strength = -0.05
+	min_local_autonomy = 95
 }
 
 territory_non_core = {
 	local_missionary_strength = -0.02
-	min_local_autonomy = 90
-	local_governing_cost = -0.75
+	min_local_autonomy = 95
 }
 
 march_bonus = {
@@ -423,9 +420,9 @@ devastation = {
 }
 
 prosperity = {
-	local_development_cost = -0.1
-	trade_goods_size_modifier = 0.25
-	local_autonomy = -0.05
+	local_development_cost = -0.2
+	trade_goods_size_modifier = 0.50
+	local_autonomy = -0.25
 }
 
 slaves_raided = {
@@ -513,7 +510,6 @@ in_trade_company = {
 	naval_forcelimit = 0.5
 	local_missionary_strength = -2
 	local_institution_spread = 0.10
-	local_governing_cost = 0.25
 }
 
 left_trade_company = {
@@ -1761,11 +1757,14 @@ expand_administation_modifier = {
 # At 100% over capacity, this modifier will be fully used
 over_governing_capacity_modifier = {
 	stability_cost_modifier = 1.0
-	ae_impact = 0.5
-	improve_relation_modifier = -0.5
-	core_creation = 0.2
-	advisor_cost = 1.0
+	ae_impact = 1.5
+	improve_relation_modifier = -2
+	diplomatic_reputation = -2
+	core_creation = 1.0
+	advisor_cost = 2.0
 	monthly_militarized_society = -1.0
+	yearly_corruption = 1
+	state_governing_cost = 1
 }
 
 
@@ -1784,26 +1783,25 @@ expanded_infrastructure = {
 	ship_recruit_speed = -0.15
 	local_defensiveness = 0.05
 	garrison_growth = 0.05
-	local_development_cost = -0.05
-	local_production_efficiency = 0.05
+	local_development_cost = -0.10
+	local_production_efficiency = 0.10
 	local_tax_modifier = 0.1
-	local_manpower_modifier = 0.05
+	local_manpower_modifier = 0.10
 	local_sailors_modifier = 0.05
 	local_ship_repair = 0.05
-	local_autonomy = -0.005
+	local_autonomy = -0.05
 	local_build_cost = -0.05
 	local_build_time = -0.05
 	province_trade_power_modifier = 0.05
 	trade_goods_size_modifier = 0.05
-	local_governing_cost_increase = 15
-	local_governing_cost = 0.1
 	local_great_project_upgrade_cost = -0.05
 }
 
 centralize_state = {
 	statewide_governing_cost = -0.25
-	local_prosperity_growth = 0.1
-	local_state_maintenance_modifier = -0.2
+	local_prosperity_growth = 0.2
+	local_state_maintenance_modifier = -0.20
+	local_build_cost = -.15	
 	picture = "centralize_state"
 }
 
